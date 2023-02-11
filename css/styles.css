@@ -12,6 +12,7 @@
   --button-secondary-bg-color: #f5f4fa;
   --bg-color: #2f303a;
   --line-header-color: #ececec;
+  --main-svg-fill: #afb1b8;
 }
 
 body {
@@ -32,6 +33,11 @@ a {
   margin: 0;
   list-style: none;
 }
+
+.link {
+  display: block;
+}
+
 /* общие стили для оформления контейнеров */
 .container {
   margin-left: auto;
@@ -41,6 +47,43 @@ a {
 
   width: 1200px;
 }
+
+/* основное оформление отступов справа между блоками*/
+.item-flex:not(:last-child) {
+  margin-right: 30px;
+}
+/* основное оформление для картинок */
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Основное оформление секций */
+.section {
+  margin-top: 0px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+/* Основное оформление заголовков секций */
+.section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+/* Основное оформление заголовков */
+.title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  color: var(--title-text-color);
+}
+
 /* основное оформление логотипа */
 .logo {
   color: var(--title-text-color);
@@ -50,12 +93,27 @@ a {
   line-height: 1.19;
 }
 
-.accent {
-  color: var(--accent-color);
+/* Основное оформление кнопки */
+.button {
+  border-radius: 4px;
+  padding: 6px 22px;
+
+  display: inline-block;
 }
 
-.img {
-  display: block;
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.accent {
+  color: var(--accent-color);
 }
 
 /* Стили для index */
@@ -87,8 +145,6 @@ a {
   padding-top: 32px;
   padding-bottom: 32px;
 
-  display: block;
-
   color: var(--title-text-color);
   font-weight: 500;
   line-height: 1.14;
@@ -96,11 +152,12 @@ a {
 }
 
 .nav-link:hover,
-.contacts-header:hover,
+.contacts-item:hover,
 .contacts-footer:hover,
 .nav-link:focus,
-.contacts-header:focus,
+.contacts-item:focus,
 .contacts-footer:focus {
+  fill: var(--accent-color);
   color: var(--accent-color);
 }
 
@@ -110,24 +167,60 @@ a {
 
 .contacts-nav {
   margin-left: auto;
-
-  display: flex;
+  align-items: center;
+  display: inline-flex;
 }
 
 .contacts-header {
-  color: var(--main-text-color);
+  color: inherit;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
+
+.contacts-item {
+  display: flex;
+  align-items: center;
+
+  color: var(--main-text-color);
+  fill: var(--main-text-color);
+}
+
+.icon {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: inherit;
+}
+
+.smartphone-icon {
+  width: 10px;
+  height: 16px;
+}
+
 /* Оформление секции-герой */
 .hero {
   padding: 200px 452px;
 
   text-align: center;
 
-  background-color: var(--bg-color);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/overlay.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
+.hero-container {
+  max-width: 696px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Оформление заголовка секции-герой */
 .hero-title {
   margin-top: 0px;
@@ -141,13 +234,7 @@ a {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-/* Основное оформление кнопки */
-.button {
-  border-radius: 4px;
-  padding: 6px 22px;
 
-  display: inline-block;
-}
 /* Оформление кнопки в секции-герой */
 .primary {
   padding: 10px 32px;
@@ -169,47 +256,40 @@ a {
 
   background-color: var(--second-accent-color);
 }
-/* Основное оформление секций */
-.section {
-  margin-top: 0px;
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-/* Основное оформление заголовков секций */
-.section-title {
-  margin-top: 0;
-  margin-bottom: 50px;
 
-  color: var(--title-text-color);
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-}
-/* Основное оформление заголовков */
-.title {
-  margin-top: 0;
-  margin-bottom: 10px;
-
-  color: var(--title-text-color);
-}
 /* Оформление выравнивания секции особенности компании */
 .title-advantages {
   display: none;
 }
 
+/* Оформление списка особенностей компании */
 .advantages-list {
   display: flex;
 }
 
+/* Оформление элементов списка особенностей компании */
 .advantages-item {
   width: calc((100% - 90px) / 4);
   justify-content: center;
 }
+/* Оформление иконок особенностей компании */
+.icon-advantages-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 270px;
+  height: 120px;
 
-.advantages-item:not(:last-child) {
-  margin-right: 30px;
+  background-color: var(--button-secondary-bg-color);
+  border-radius: 4px;
 }
+
+.icon-advantages {
+  width: 65px;
+  height: 70px;
+}
+
 /* Оформление заголовков секции особенности компании */
 .advantages-title {
   font-weight: 700;
@@ -222,12 +302,12 @@ a {
   margin: 0;
 }
 
-.work-list {
-  display: flex;
+.work-section {
+  padding-top: 0;
 }
 
-.work-list-item:not(:last-child) {
-  margin-right: 30px;
+.work-list {
+  display: flex;
 }
 
 /* Оформление для секции команда */
@@ -244,18 +324,16 @@ a {
   text-align: center;
 }
 
-.team-img {
-  margin-bottom: 30px;
-}
-
 .card {
+  padding-bottom: 30px;
+
   background-color: var(--second-accent-color);
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.team-list-item:not(:last-child) {
-  margin-right: 30px;
+.team-img {
+  margin-bottom: 30px;
 }
 
 /* Оформление заголовков секции команда */
@@ -267,35 +345,143 @@ a {
 /* Оформление рода деятельности членов команды */
 .prof {
   margin: 0px;
-  padding-bottom: 30px;
+  margin-bottom: 16px;
 
   font-size: 16px;
   line-height: 1.19;
 }
+
+.sw-list {
+  display: inline-flex;
+}
+
+.sw-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.sw-link {
+  padding: 12px;
+  width: 44px;
+  height: 44px;
+
+  text-align: center;
+  background-color: inherit;
+  fill: var(--main-svg-fill);
+
+  border-radius: 50%;
+}
+
+.sw-link:hover,
+.icon-link:hover,
+.sw-link:focus,
+.icon-link:focus {
+  background-color: var(--accent-color);
+  fill: var(--second-accent-color);
+}
+
+.icon-link {
+  width: 20px;
+  height: 20px;
+  fill: inherit;
+}
+
+.clients-list {
+  display: inline-flex;
+}
+
+/* Оформление списка клиентов */
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 90px;
+
+  border: 1px solid var(--main-svg-fill);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: var(--second-accent-color);
+  fill: var(--main-svg-fill);
+}
+
+.icon-clients {
+  fill: inherit;
+}
+
+.icon-clients:hover,
+.clients-link:hover,
+.icon-clients:focus,
+.clients-link:focus {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.icon-client-yanco {
+  width: 44px;
+  height: 49px;
+}
+
+.icon-client-tiglinehere {
+  width: 40px;
+  height: 52px;
+}
+
+.icon-client-company {
+  width: 41px;
+  height: 42.6px;
+}
+
+.icon-client-fosterpeters {
+  width: 79.66px;
+  height: 42px;
+}
+
+.icon-client-brand {
+  width: 59px;
+  height: 47px;
+}
+
+.icon-client-tigline {
+  width: 88.48px;
+  height: 45.44px;
+}
+
 /* Оформление контейнера в футере */
 .footer-container {
   padding-top: 60px;
   padding-bottom: 60px;
+
+  color: var(--second-accent-color);
 }
+/* Оформление контактов */
+.footer-list {
+  display: inline-flex;
+  align-items: flex-start;
+}
+.footer-list-item:not(:last-child) {
+  margin-right: 70px;
+}
+
 /* Оформление лого в футере */
 .footer-logo {
   margin-bottom: 20px;
 
   display: block;
 
-  color: var(--second-accent-color);
+  color: inherit;
 }
-/* Оформление контактов */
+/* Оформление контактов в футере */
 .address {
-  color: var(--second-accent-color);
+  color: inherit;
   font-style: normal;
 }
 
+/* Оформление адреса в футере */
 .location {
   margin-top: 0;
   margin-bottom: 9px;
 }
-
+/* Оформление контактов в футере */
 .contacts-footer {
   margin-bottom: 9px;
 
@@ -303,9 +489,26 @@ a {
 
   color: var(--contacts-footer-color);
 }
-
 .tel {
   margin-bottom: 0;
+}
+
+.sw-foter-title {
+  margin-bottom: 20px;
+  padding-top: 12px;
+
+  font-size: 14px;
+  line-height: 1.143;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.sw-footer-link {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.icon-footer-link {
+  fill: var(--second-accent-color);
 }
 
 /* Стили для portfolio */
@@ -357,6 +560,12 @@ a {
 
   background-color: var(--second-accent-color);
   border: 1px solid #eeeeee;
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-list-item:not(:nth-child(3n)) {
