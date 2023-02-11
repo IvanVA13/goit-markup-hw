@@ -14,10 +14,7 @@
     position: absolute;
     top: 0;
     left: 0;
-
-    font-size: $f-size-1;
-    line-height: $l-hgt-3;
-    letter-spacing: $let-scg-1;
+    @include fonts($fc: 12px, $lh: 1.17, $ls: 0.01em);
 
     transform: translateY(-128%);
   }
@@ -42,15 +39,18 @@
   &__input-alt {
     @extend %d-in-block;
     margin-right: 12px;
+    @include for-size(mob-tab) {
+      margin-bottom: 20px;
+    }
     padding-left: 16px;
-    width: 358px;
+    width: 300px;
+    @include for-size(mobile) {
+      width: 358px;
+    }
     height: 50px;
 
     color: $second-accent-color;
-    font-weight: $f-weight-n;
-    font-size: $f-size-3;
-    line-height: $l-hgt-5;
-    letter-spacing: $let-scg-3;
+    @include fonts($lh: 1.25);
 
     background-color: $form-input-bg-color;
     border: 1px solid $form-input-alt-bg-color;
@@ -90,10 +90,8 @@
   }
 
   &__textarea::placeholder {
-    font-size: $f-size-2;
-    line-height: $l-hgt-1;
-    letter-spacing: $let-scg-1;
     color: $placeholder-color;
+    @include fonts($fc: 14px, $ls: 0.01em);
   }
 
   &__field:hover &__textarea,
@@ -105,11 +103,29 @@
   &__terms-field {
     @include centerFlexbox();
     margin-bottom: 30px;
+
+    @include for-size(mob-tab) {
+      @include fonts($fc: 12px, $lh: 1.17);
+    }
   }
 
   &__terms-link {
+    position: relative;
+    @extend %link;
     color: $accent-color;
-    // text-decoration: underline;
+  }
+
+  &__terms-link::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    content: "";
+    @extend %d-block;
+    width: 100%;
+    height: 1px;
+
+    background-color: $accent-color;
   }
 
   &__checkbox {
@@ -137,7 +153,7 @@
   &__checkbox:checked + &__custom-checkbox {
     background-color: $accent-color;
     border-color: transparent;
-    background-image: url("../images/modal-cheked.svg");
+    background-image: url("../images/icon/modal-cheked.svg");
     background-size: contain;
     background-origin: border-box;
   }
@@ -150,11 +166,8 @@
     width: 200px;
     height: 50px;
 
-    font-weight: $f-weight-b;
-    font-size: $f-size-3;
-    line-height: $l-hgt-10;
-    letter-spacing: $let-scg-4;
     color: $second-accent-color;
+    @include fonts(700, $lh: 1.87, $ls: 0.06em);
 
     background-color: $accent-color;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -168,7 +181,13 @@
   }
 
   &__button--footer {
-    margin: 0;
+    @include for-size(mob-tab) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include for-size(desktop) {
+      margin: 0;
+    }
     padding: 6px 22px;
 
     border-radius: 4px;
