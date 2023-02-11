@@ -227,8 +227,6 @@ a {
   padding-top: 200px;
   padding-bottom: 200px;
 
-  text-align: center;
-
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -245,6 +243,8 @@ a {
   max-width: 696px;
   margin-left: auto;
   margin-right: auto;
+
+  text-align: center;
 }
 
 /* Оформление заголовка секции-герой */
@@ -256,7 +256,6 @@ a {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -273,6 +272,7 @@ a {
   text-align: center;
   letter-spacing: 0.06em;
 
+  border: 0px;
   background-color: var(--accent-color);
   transition: background-color var(--main-dilay) var(--main-cubic);
 }
@@ -283,11 +283,12 @@ a {
 
   background-color: var(--second-accent-color);
 }
-
+/* Оформление модального окна */
 .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 99;
 
   width: 100%;
   height: 100%;
@@ -307,6 +308,7 @@ a {
   top: 50%;
   left: 50%;
 
+  padding: 40px;
   width: 528px;
   height: 581px;
 
@@ -322,21 +324,175 @@ a {
   transform: translate(-50%, -50%) scale(0.8);
 }
 
-.close {
+.button-close {
   position: absolute;
   top: 8px;
   right: 8px;
 
-  display: inline-block;
-  padding: 9px 9px 10px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
 
-  background-image: url("../images/close.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: var(--second-accent-color);
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.icon-close {
+  fill: #000000;
+  transition: fill var(--main-dilay) var(--main-cubic);
+}
+
+.button-close:hover .icon-close,
+.button-close:focus .icon-close {
+  fill: var(--accent-color);
+}
+
+.modal-form b {
+  display: block;
+  margin-bottom: 30px;
+
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.form-field {
+  position: relative;
+
+  display: block;
+  margin-bottom: 28px;
+}
+
+.form-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  transform: translateY(-128%);
+}
+
+.form-input {
+  padding-left: 42px;
+  width: 100%;
+  height: 40px;
+
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color var(--main-dilay) var(--main-cubic),
+    outline-color var(--main-dilay) var(--main-cubic);
+}
+
+.form-textarea {
+  padding: 12px 16px;
+  display: block;
+  width: 100%;
+  height: 120px;
+  resize: none;
+
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color var(--main-dilay) var(--main-cubic),
+    outline-color var(--main-dilay) var(--main-cubic);
+}
+
+.form-field-textarea {
+  margin-bottom: 20px;
+}
+
+.form-textarea::placeholder {
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-field:hover .form-input,
+.form-field:focus-within .form-input,
+.form-field:hover .form-textarea,
+.form-field:focus-within .form-textarea {
+  border-color: var(--accent-color);
+  outline-color: var(--accent-color);
+}
+
+.form-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+
+  width: 18px;
+  height: 18px;
+
+  fill: var(--title-text-color);
+  transform: translateY(-50%);
+  transition: fill var(--main-dilay) var(--main-cubic);
+}
+
+.form-field:hover .form-input-icon,
+.form-field:focus-within .form-input-icon {
+  fill: var(--accent-color);
+}
+
+.terms-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.custom-checkbox {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+
+  border-radius: 2px;
+  border: 1px solid var(--title-text-color);
+  transition: background-color var(--main-dilay) var(--main-cubic);
+}
+.checkbox:checked + .custom-checkbox {
+  border-color: transparent;
+  background-color: var(--accent-color);
+  background-image: url("../images/modal-cheked.svg");
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.terms-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Кнопка отправки формы */
+.modal-form .button-form {
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color var(--main-dilay) var(--main-cubic);
+}
+
+.modal-form .button-form:hover,
+.modal-form .button-form:focus {
+  background-color: #188ce8;
 }
 
 /* Оформление выравнивания секции особенности компании */
@@ -451,6 +607,8 @@ a {
   padding-bottom: 30px;
 
   background-color: var(--second-accent-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
@@ -534,7 +692,7 @@ a {
 .clients-link:hover,
 .clients-link:focus {
   border-color: var(--accent-color);
-  outline: none;
+  outline-color: var(--accent-color);
 }
 
 .icon-clients {
@@ -611,6 +769,52 @@ a {
 
 .icon-footer-link {
   fill: var(--second-accent-color);
+}
+
+.footer-form {
+  display: flex;
+}
+
+.footer-input {
+  display: inline-block;
+  margin-right: 12px;
+  padding-left: 16px;
+  width: 358px;
+  height: 50px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: var(--second-accent-color);
+
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.button-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--second-accent-color);
+
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
+}
+
+.icon-footer-form {
+  margin-left: 10px;
 }
 
 /* Стили для portfolio */
