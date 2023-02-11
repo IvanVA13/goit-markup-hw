@@ -1,0 +1,37 @@
+.clients {
+  @include centerFlexbox(inline-flex);
+  @extend %list;
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__link {
+    @include centerFlexbox();
+    @extend %link, %d-block;
+    width: 170px;
+    height: 90px;
+
+    background-color: $second-accent-color;
+    border: 1px solid $main-svg-fill;
+    border-radius: 4px;
+
+    transition: border-color $animation;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    border-color: $accent-color;
+    outline-color: $accent-color;
+  }
+
+  &__icon {
+    fill: $main-svg-fill;
+    transition: fill $animation;
+  }
+
+  &__link:hover &__icon,
+  &__link:focus &__icon {
+    fill: $accent-color;
+  }
+}

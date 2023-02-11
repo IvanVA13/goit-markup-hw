@@ -1,0 +1,54 @@
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  background-image: linear-gradient(to right, $hero-bg, $hero-bg),
+    url("../images/overlay.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 696px;
+
+    text-align: center;
+  }
+
+  //Оформление заголовка секции-герой
+  &__title {
+    margin-top: 0px;
+    margin-bottom: 30px;
+
+    color: $second-accent-color;
+    font-weight: $f-weight-bb;
+    font-size: $f-size-8;
+    line-height: $l-hgt-6;
+    letter-spacing: $let-scg-4;
+    text-transform: uppercase;
+  }
+
+  //Оформление кнопки в секции-герой
+  &__button {
+    padding: 10px 32px;
+
+    color: $second-accent-color;
+    font-weight: $f-weight-b;
+    font-size: $f-size-3;
+    line-height: $l-hgt-10;
+    text-align: center;
+    letter-spacing: $let-scg-4;
+
+    background-color: $accent-color;
+    transition: background-color $animation;
+  }
+
+  &__button:hover,
+  &__button:focus {
+    color: $accent-color;
+
+    background-color: $second-accent-color;
+  }
+}

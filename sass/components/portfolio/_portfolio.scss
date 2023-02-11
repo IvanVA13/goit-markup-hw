@@ -1,0 +1,84 @@
+.portfolio {
+  @include centerFlexbox();
+  @extend %list;
+  flex-wrap: wrap;
+
+  &__item:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+
+  &__item:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    @extend %link, %d-block;
+    width: 370px;
+
+    background-color: $second-accent-color;
+    border: 1px solid #eeeeee;
+    transition: box-shadow $animation;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__link:visited {
+    color: currentColor;
+  }
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    @extend %d-block;
+    margin: 0;
+    padding: 63px 24px;
+    width: 370px;
+    height: 294px;
+
+    font-size: $f-size-4;
+    line-height: $l-hgt-7;
+    letter-spacing: $let-scg-3;
+    color: $second-accent-color;
+
+    background-color: $portfolio-bg-color;
+    transition: top $animation;
+  }
+
+  &__link:hover &__description,
+  &__link:focus &__description {
+    top: 0;
+  }
+
+  &__title {
+    @extend %title;
+    margin-bottom: 4px;
+    padding-left: 24px;
+
+    font-weight: $f-weight-b;
+    font-size: $f-size-4;
+    line-height: $l-hgt-11;
+    letter-spacing: $let-scg-4;
+  }
+
+  &__type-work {
+    margin: 0;
+    padding-bottom: 20px;
+    padding-left: 24px;
+
+    font-size: $f-size-3;
+    line-height: $l-hgt-10;
+  }
+}

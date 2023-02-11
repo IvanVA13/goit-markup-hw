@@ -1,0 +1,50 @@
+.site-nav {
+  &__list {
+    @include centerFlexbox();
+    @extend %list;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  &__link {
+    @extend %link, %d-block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: $title-text-color;
+    font-weight: $f-weight-nb;
+    line-height: $l-hgt-1;
+    letter-spacing: $let-scg-2;
+    transition: color $animation;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $accent-color;
+  }
+
+  &__link--current {
+    position: relative;
+
+    color: $accent-color;
+  }
+
+  &__link--current::after {
+    position: absolute;
+    bottom: 0;
+
+    content: "";
+    @extend %d-block;
+    width: 100%;
+    height: 4px;
+
+    background-color: $accent-color;
+    border-radius: 2px;
+  }
+
+  &__link--current:visited {
+    color: $accent-color;
+  }
+}

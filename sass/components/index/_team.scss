@@ -1,0 +1,10 @@
+.team {
+  @include centerFlexbox();
+  @extend %list;
+
+  text-align: center;
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+}

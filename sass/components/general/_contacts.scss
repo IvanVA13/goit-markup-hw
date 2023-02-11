@@ -1,0 +1,53 @@
+.contacts {
+  @include centerFlexbox(inline-flex);
+  @extend %list;
+
+  &__item--margin:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  &__item--footer:not(:last-child) {
+    margin-bottom: 9px;
+  }
+
+  &__link {
+    @extend %link;
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: $main-text-color;
+    font-weight: $f-weight-nb;
+    line-height: $l-hgt-1;
+    letter-spacing: $let-scg-2;
+
+    transition: color $animation;
+  }
+
+  &__link--footer {
+    padding: 0;
+
+    color: $contacts-footer-color;
+    font-weight: $f-weight-n;
+    line-height: $l-hgt-9;
+    letter-spacing: $let-scg-3;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $accent-color;
+  }
+
+  &__icon {
+    margin-right: 10px;
+
+    fill: $main-text-color;
+    transition: fill $animation;
+  }
+
+  &__link:hover &__icon,
+  &__link:focus &__icon {
+    fill: $accent-color;
+  }
+}

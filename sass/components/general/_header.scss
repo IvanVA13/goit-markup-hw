@@ -1,0 +1,15 @@
+.header {
+  border-bottom: 1px solid $line-header-color;
+
+  &__container {
+    @include centerFlexbox();
+    @extend %list;
+  }
+  &__item:nth-child(1) {
+    margin-right: 93px;
+  }
+
+  &__item:last-child {
+    margin-left: auto;
+  }
+}

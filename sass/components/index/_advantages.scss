@@ -1,0 +1,57 @@
+//Оформление списка особенностей компании
+.advantages {
+  @include centerFlexbox();
+  @extend %list;
+
+  //Оформление элементов списка особенностей компании
+  &__item {
+    width: calc((100% - 90px) / 4);
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  //Оформление иконок особенностей компании
+  &__item::before {
+    @extend %d-block;
+    margin-bottom: 30px;
+    content: "";
+    width: 270px;
+    height: 120px;
+
+    background-color: $button-secondary-bg-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+  }
+
+  &__item:nth-child(1)::before {
+    background-image: url("../images/icon-antenna.svg");
+  }
+
+  &__item:nth-child(2)::before {
+    background-image: url("../images/icon-clock.svg");
+  }
+
+  &__item:nth-child(3)::before {
+    background-image: url("../images/icon-diagram.svg");
+  }
+
+  &__item:nth-child(4)::before {
+    background-image: url("../images/icon-astronaut.svg");
+  }
+
+  //Оформление заголовков секции особенности компании
+  &__title {
+    @extend %title;
+    font-weight: $f-weight-b;
+    font-size: inherit;
+    line-height: $l-hgt-1;
+    text-transform: uppercase;
+  }
+  //Оформление параграфов особенности компании
+  &__desc {
+    margin: 0;
+  }
+}

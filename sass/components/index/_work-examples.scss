@@ -1,0 +1,35 @@
+.work-examples {
+  @include centerFlexbox();
+  @extend %list;
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__container {
+    position: relative;
+
+    width: 370px;
+    height: 294px;
+  }
+
+  &__title {
+    @extend %title;
+    position: absolute;
+    bottom: 0;
+
+    @include centerFlexbox();
+    margin: 0;
+    width: 100%;
+    height: 70px;
+
+    font-weight: $f-weight-b;
+    font-size: inherit;
+    line-height: $l-hgt-1;
+    text-align: center;
+    letter-spacing: $let-scg-3;
+    text-transform: uppercase;
+    color: $second-accent-color;
+    background-color: $work-title-bg-color;
+  }
+}
