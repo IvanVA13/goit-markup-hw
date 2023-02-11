@@ -1,6 +1,18 @@
 .sorting {
-  @include centerFlexbox();
+  @include for-size(mobile-only) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include for-size(tablet) {
+    @include centerFlexbox();
+  }
   @extend %list;
+
+  &__item:nth-child(-n + 3) {
+    @include for-size(mobile-only) {
+      margin-bottom: 15px;
+    }
+  }
 
   &__item:not(:last-child) {
     margin-right: 8px;
@@ -8,9 +20,7 @@
 
   &__button {
     color: $title-text-color;
-    font-weight: $f-weight-nb;
-    font-size: $f-size-3;
-    line-height: $l-hgt-8;
+    @include fonts(500, $lh: 1.62);
     text-align: center;
 
     background-color: $button-secondary-bg-color;

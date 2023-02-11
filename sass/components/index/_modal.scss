@@ -3,9 +3,16 @@
   top: 50%;
   left: 50%;
 
+  width: 450px;
+  height: 609px;
+  @include for-size(mobile-s) {
+    width: 100%;
+  }
+  @include for-size(desktop) {
+    width: 95%;
+    height: 581px;
+  }
   padding: 40px;
-  width: 528px;
-  height: 581px;
 
   background-color: $second-accent-color;
   transform: translate(-50%, -50%) scale(1);
@@ -47,10 +54,10 @@
     margin-bottom: 30px;
 
     color: $title-text-color;
-    font-weight: $f-weight-b;
-    font-size: $f-size-5;
-    line-height: $l-hgt-2;
+    @include fonts(700, 20px, 1.15);
+    @include for-size(mob-tab) {
+      @include fonts(700, 20px, 1.5);
+    }
     text-align: center;
-    letter-spacing: $let-scg-3;
   }
 }

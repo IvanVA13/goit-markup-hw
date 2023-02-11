@@ -12,38 +12,81 @@
 <body>
     <!-- Верхняя линия -->
     <header class="header">
-        <ul class="container list header__container">
+        <ul class="container header__container">
             <li class="header__item">
                 <a class="logo" href=""><span class="logo__accent">Web</span>Studio
                 </a>
             </li>
             <li class="header__item">
+                <div class="menu-mob">
+                    <button class="menu-mob__menu" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+                        <svg class="menu-mob__icon" width="40" height="40" aria-label="Переключатель мобильного меню">
+                            <use class="menu-mob__icon-menu" href="./images/icon/sprite.svg#icon-menu"></use>
+                            <use class="menu-mob__icon-close" href="./images/icon/sprite.svg#icon-menu-close"></use>
+                        </svg>
+                    </button>
+                    <div class="menu-mob__container" id="menu-container" data-menu>
+                        <nav class="site-nav">
+                            <ul class="site-nav__list">
+                                <li class="site-nav__item"><a class="site-nav__link"
+                                        href="./index.html" rel="noopener noreferer">Студия</a></li>
+                                <li class="site-nav__item"><a class="site-nav__link site-nav__link--current" href="./portfolio.html"
+                                        rel="noopener noreferer">Портфолио</a>
+                                </li>
+                                <li class="site-nav__item"><a class="site-nav__link" href=""
+                                        rel="noopener noreferer">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <ul class="contacts">
+                            <li class="contacts__item contacts__item--margin">
+                                <a class="contacts__link contacts__link--mob-menu" href="mailto:info@devstudio.com"
+                                    rel="noopener noreferer">
+                                    <svg class="contacts__icon" width="16" height="12">
+                                        <use href="./images/icon/sprite.svg#icon-envelope"></use>
+                                    </svg>
+                                    info@devstudio.com
+                                </a>
+                            </li>
+                            <li class="contacts__item contacts__item--margin">
+                                <a class="contacts__link contacts__link--mob-menu" href="tel:+380961111111"
+                                    rel="noopener noreferer">
+                                    <svg class="contacts__icon" width="10" height="16">
+                                        <use href="./images/icon/sprite.svg#icon-smartphone"></use>
+                                    </svg>
+                                    +38 096 111 11 11
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="header__item">
                 <nav class="site-nav">
-                    <ul class="list site-nav__list">
-                        <li class="site-nav__item"><a class="link site-nav__link"
-                                href="./index.html" rel="noopener noreferer">Студия</a></li>
-                        <li class="site-nav__item"><a class="link site-nav__link site-nav__link--current" href="./portfolio.html"
+                    <ul class="site-nav__list">
+                        <li class="site-nav__item"><a class="site-nav__link" href="./index.html"
+                                rel="noopener noreferer">Студия</a></li>
+                        <li class="site-nav__item"><a class="site-nav__link site-nav__link--current" href="./portfolio.html"
                                 rel="noopener noreferer">Портфолио</a></li>
-                        <li class="site-nav__item"><a class="link site-nav__link" href=""
-                                rel="noopener noreferer">Контакты</a>
+                        <li class="site-nav__item"><a class="site-nav__link" href="" rel="noopener noreferer">Контакты</a>
                         </li>
                     </ul>
                 </nav>
             </li>
             <li class="header__item">
-                <ul class="list contacts">
+                <ul class="contacts">
                     <li class="contacts__item contacts__item--margin">
-                        <a class="link contacts__link" href="mailto:info@devstudio.com" rel="noopener noreferer">
+                        <a class="contacts__link" href="mailto:info@devstudio.com" rel="noopener noreferer">
                             <svg class="contacts__icon" width="16" height="12">
-                                <use href="./images/sprite.svg#icon-envelope"></use>
+                                <use href="./images/icon/sprite.svg#icon-envelope"></use>
                             </svg>
                             info@devstudio.com
                         </a>
                     </li>
                     <li class="contacts__item contacts__item--margin">
-                        <a class="link contacts__link" href="tel:+380961111111" rel="noopener noreferer">
+                        <a class="contacts__link" href="tel:+380961111111" rel="noopener noreferer">
                             <svg class="contacts__icon" width="10" height="16">
-                                <use href="./images/sprite.svg#icon-smartphone"></use>
+                                <use href="./images/icon/sprite.svg#icon-smartphone"></use>
                             </svg>
                             +38 096 111 11 11
                         </a>
@@ -55,27 +98,40 @@
     <main>
         <section class="section">
             <h1 class="section__title section__title--hidden">Портфолио</h1>
-            <ul class="list section__list">
+            <ul class="section__list">
                 <li class="section__item">
                     <div class="container">
-                        <ul class="list sorting">
+                        <ul class="sorting">
                             <li class="sorting__item"><button class="button sorting__button" type="button">Все</button></li>
-                            <li class="sorting__item"><button class="button sorting__button" type="button">Веб-сайты</button></li>
-                            <li class="sorting__item"><button class="button sorting__button" type="button">Приложения</button></li>
+                            <li class="sorting__item"><button class="button sorting__button" type="button">Веб-сайты</button>
+                            </li>
+                            <li class="sorting__item"><button class="button sorting__button" type="button">Приложения</button>
+                            </li>
                             <li class="sorting__item"><button class="button sorting__button" type="button">Дизайн</button></li>
-                            <li class="sorting__item"><button class="button sorting__button" type="button">Маркетинг</button></li>
+                            <li class="sorting__item"><button class="button sorting__button" type="button">Маркетинг</button>
+                            </li>
                         </ul>
                     </div>
                 </li>
                 <li class="section__item">
                     <div class="container">
-                        <ul class="list portfolio">
+                        <ul class="portfolio">
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/tekhnokryak.jpg" alt="Технокряк" width="370" height="294">
-                                        <p class="portfolio__description">Технокряк это современная площадка распространения коронавируса.
-                                            Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/tekhnokryak.webp 1x, ./images/portfolio/desktop/tekhnokryak@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/tekhnokryak.webp 1x, ./images/portfolio/tablet/tekhnokryak@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/tekhnokryak.webp 1x, ./images/portfolio/mobile/tekhnokryak@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/tekhnokryak.jpg 1x, ./images/portfolio/desktop/tekhnokryak@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/tekhnokryak.jpg 1x, ./images/portfolio/tablet/tekhnokryak@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/tekhnokryak.jpg 1x, ./images/portfolio/mobile/tekhnokryak@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/tekhnokryak.jpg" alt="Технокряк" width="450"/>
+                                        </picture>
+                                        <p class="portfolio__description">Технокряк это современная площадка распространения
+                                            коронавируса.
+                                            Компании используют эту платформу для цифрового шпионажа и атак на защищённые
+                                            сервера
                                             конкурентов.</p>
                                     </div>
                                     <h2 class="title portfolio__title">Технокряк</h2>
@@ -83,10 +139,17 @@
                                 </a>
                             </li>
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/poster-new-orlean-vs-golden-star.jpg"
-                                            alt="Постер New Orlean vs Golden Star" width="370" height="294">
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/poster-new-orlean-vs-golden-star.webp 1x, ./images/portfolio/desktop/poster-new-orlean-vs-golden-star@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/poster-new-orlean-vs-golden-star.webp 1x, ./images/portfolio/tablet/poster-new-orlean-vs-golden-star@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/poster-new-orlean-vs-golden-star.webp 1x, ./images/portfolio/mobile/poster-new-orlean-vs-golden-star@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/poster-new-orlean-vs-golden-star.jpg 1x, ./images/portfolio/desktop/poster-new-orlean-vs-golden-star@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/poster-new-orlean-vs-golden-star.jpg 1x, ./images/portfolio/tablet/poster-new-orlean-vs-golden-star@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/poster-new-orlean-vs-golden-star.jpg 1x, ./images/portfolio/mobile/poster-new-orlean-vs-golden-star@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/poster-new-orlean-vs-golden-star.jpg" alt="New Orlean vs Golden Star" width="450"/>
+                                        </picture>
                                         <p class="portfolio__description">New Orlean vs Golden Star</p>
                                     </div>
                                     <h2 class="title portfolio__title">Постер New Orlean vs Golden Star</h2>
@@ -94,10 +157,17 @@
                                 </a>
                             </li>
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/restoran-seafood.jpg" alt="Ресторан Seafood" width="370"
-                                            height="294">
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/restoran-seafood.webp 1x, ./images/portfolio/desktop/restoran-seafood@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/restoran-seafood.webp 1x, ./images/portfolio/tablet/restoran-seafood@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/restoran-seafood.webp 1x, ./images/portfolio/mobile/restoran-seafood@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/restoran-seafood.jpg 1x, ./images/portfolio/desktop/restoran-seafood@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/restoran-seafood.jpg 1x, ./images/portfolio/tablet/restoran-seafood@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/restoran-seafood.jpg 1x, ./images/portfolio/mobile/restoran-seafood@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/restoran-seafood.jpg" alt="Ресторан Seafood" width="450"/>
+                                        </picture>
                                         <p class="portfolio__description">Ресторан Seafood</p>
                                     </div>
                                     <h2 class="title portfolio__title">Ресторан Seafood</h2>
@@ -105,9 +175,17 @@
                                 </a>
                             </li>
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/project-prime.jpg" alt="Проект Prime" width="370" height="294">
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/project-prime.webp 1x, ./images/portfolio/desktop/project-prime@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/project-prime.webp 1x, ./images/portfolio/tablet/project-prime@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/project-prime.webp 1x, ./images/portfolio/mobile/project-prime@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/project-prime.jpg 1x, ./images/portfolio/desktop/project-prime@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/project-prime.jpg 1x, ./images/portfolio/tablet/project-prime@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/project-prime.jpg 1x, ./images/portfolio/mobile/project-prime@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/project-prime.jpg" alt="Проект Prime" width="450"/>
+                                        </picture>
                                         <p class="portfolio__description">Проект Prime</p>
                                     </div>
                                     <h2 class="title portfolio__title">Проект Prime</h2>
@@ -115,9 +193,17 @@
                                 </a>
                             </li>
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/project-boxes.jpg" alt="Проект Boxes" width="370" height="294">
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/project-boxes.webp 1x, ./images/portfolio/desktop/project-boxes@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/project-boxes.webp 1x, ./images/portfolio/tablet/project-boxes@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/project-boxes.webp 1x, ./images/portfolio/mobile/project-boxes@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/project-boxes.jpg 1x, ./images/portfolio/desktop/project-boxes@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/project-boxes.jpg 1x, ./images/portfolio/tablet/project-boxes@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/project-boxes.jpg 1x, ./images/portfolio/mobile/project-boxes@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/project-boxes.jpg" alt="Проект Boxes" width="450"/>
+                                        </picture>
                                         <p class="portfolio__description">Проект Boxes</p>
                                     </div>
                                     <h2 class="title portfolio__title">Проект Boxes</h2>
@@ -125,10 +211,17 @@
                                 </a>
                             </li>
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/inspiration-has-no-borders.jpg" alt="Inspiration has no Borders"
-                                            width="370" height="294">
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/inspiration-has-no-borders.webp 1x, ./images/portfolio/desktop/inspiration-has-no-borders@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/inspiration-has-no-borders.webp 1x, ./images/portfolio/tablet/inspiration-has-no-borders@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/inspiration-has-no-borders.webp 1x, ./images/portfolio/mobile/inspiration-has-no-borders@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/inspiration-has-no-borders.jpg 1x, ./images/portfolio/desktop/inspiration-has-no-borders@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/inspiration-has-no-borders.jpg 1x, ./images/portfolio/tablet/inspiration-has-no-borders@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/inspiration-has-no-borders.jpg 1x, ./images/portfolio/mobile/inspiration-has-no-borders@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/inspiration-has-no-borders.jpg" alt="Inspiration has no Borders" width="450"/>
+                                        </picture>
                                         <p class="portfolio__description">Inspiration has no Borders</p>
                                     </div>
                                     <h2 class="title portfolio__title">Inspiration has no Borders</h2>
@@ -136,10 +229,17 @@
                                 </a>
                             </li>
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/izdanie-limited-edition.jpg" alt="Издание Limited Edition"
-                                            width="370" height="294">
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/izdanie-limited-edition.webp 1x, ./images/portfolio/desktop/izdanie-limited-edition@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/izdanie-limited-edition.webp 1x, ./images/portfolio/tablet/izdanie-limited-edition@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/izdanie-limited-edition.webp 1x, ./images/portfolio/mobile/izdanie-limited-edition@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/izdanie-limited-edition.jpg 1x, ./images/portfolio/desktop/izdanie-limited-edition@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/izdanie-limited-edition.jpg 1x, ./images/portfolio/tablet/izdanie-limited-edition@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/izdanie-limited-edition.jpg 1x, ./images/portfolio/mobile/izdanie-limited-edition@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/izdanie-limited-edition.jpg" alt="Издание Limited Edition" width="450"/>
+                                        </picture>
                                         <p class="portfolio__description">Издание Limited Edition</p>
                                     </div>
                                     <h2 class="title portfolio__title">Издание Limited Edition</h2>
@@ -147,9 +247,17 @@
                                 </a>
                             </li>
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/project-lab.jpg" alt="Проект LAB" width="370" height="294">
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/project-lab.webp 1x, ./images/portfolio/desktop/project-lab@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/project-lab.webp 1x, ./images/portfolio/tablet/project-lab@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/project-lab.webp 1x, ./images/portfolio/mobile/project-lab@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/project-lab.jpg 1x, ./images/portfolio/desktop/project-lab@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/project-lab.jpg 1x, ./images/portfolio/tablet/project-lab@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/project-lab.jpg 1x, ./images/portfolio/mobile/project-lab@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/project-lab.jpg" alt="Проект LAB" width="450"/>
+                                        </picture>
                                         <p class="portfolio__description">Проект LAB</p>
                                     </div>
                                     <h2 class="title portfolio__title">Проект LAB</h2>
@@ -157,10 +265,17 @@
                                 </a>
                             </li>
                             <li class="portfolio__item">
-                                <a href="" class="link portfolio__link">
+                                <a href="" class="portfolio__link">
                                     <div class="portfolio__container">
-                                        <img class="image" src="./images/growing-business.jpg" alt="Growing Business" width="370"
-                                            height="294">
+                                        <picture>
+                                            <source srcset="./images/portfolio/desktop/growing-business.webp 1x, ./images/portfolio/desktop/growing-business@2x.webp 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/growing-business.webp 1x, ./images/portfolio/tablet/growing-business@2x.webp 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/growing-business.webp 1x, ./images/portfolio/mobile/growing-business@2x.webp 2x" media="(max-width: 767px)">
+                                            <source srcset="./images/portfolio/desktop/growing-business.jpg 1x, ./images/portfolio/desktop/growing-business@2x.jpg 2x" media="(min-width: 1200px)">
+                                            <source srcset="./images/portfolio/tablet/growing-business.jpg 1x, ./images/portfolio/tablet/growing-business@2x.jpg 2x" media="(min-width: 768px)">
+                                            <source srcset="./images/portfolio/mobile/growing-business.jpg 1x, ./images/portfolio/mobile/growing-business@2x.jpg 2x" media="(max-width: 767px)">
+                                            <img class="image" src="./images/portfolio/desctop/growing-business.jpg" alt="Growing Business" width="450"/>
+                                        </picture>
                                         <p class="portfolio__description">Growing Business</p>
                                     </div>
                                     <h2 class="title portfolio__title">Growing Business</h2>
@@ -176,12 +291,12 @@
 <!-- Подвал -->
 <footer class="footer">
     <div class="container footer__container">
-        <ul class="list footer__list">
+        <ul class="footer__list">
             <li class="footer__item">
                 <a class="logo logo--white" href="./"><span class="logo__accent">Web</span>Studio</a>
                 <address class="address">
                     <p class="address__location">г. Киев, пр-т Леси Украинки, 26</p>
-                    <ul class="list contacts address__contacts">
+                    <ul class="contacts address__contacts">
                         <li class="contacts__item contacts__item--footer">
                             <a class="link contacts__link contacts__link--footer" href="mailto:info@devstudio.com"
                                 rel="noopener noreferer">
@@ -200,12 +315,12 @@
             </li>
             <li class="footer__item">
                 <h2 class="title footer__title">присоединяйтесь</h2>
-                <ul class="list socials">
+                <ul class="socials">
                     <li class="socials__item">
                         <a class="link socials__link socials__link--bg-color" href="" target="_blank"
                             rel="noopener noreferer">
                             <svg class="socials__icon socials__icon--fill">
-                                <use href="./images/sprite.svg#icon-instagram"></use>
+                                <use href="./images/icon/sprite.svg#icon-instagram"></use>
                             </svg>
                         </a>
                     </li>
@@ -213,7 +328,7 @@
                         <a class="link socials__link socials__link--bg-color" href="" target="_blank"
                             rel="noopener noreferer">
                             <svg class="socials__icon socials__icon--fill">
-                                <use href="./images/sprite.svg#icon-twitter"></use>
+                                <use href="./images/icon/sprite.svg#icon-twitter"></use>
                             </svg>
                         </a>
                     </li>
@@ -221,7 +336,7 @@
                         <a class="link socials__link socials__link--bg-color" href="" target="_blank"
                             rel="noopener noreferer">
                             <svg class="socials__icon socials__icon--fill">
-                                <use href="./images/sprite.svg#icon-facebook"></use>
+                                <use href="./images/icon/sprite.svg#icon-facebook"></use>
                             </svg>
                         </a>
                     </li>
@@ -229,7 +344,7 @@
                         <a class="link socials__link socials__link--bg-color" href="" target="_blank"
                             rel="noopener noreferer">
                             <svg class="socials__icon socials__icon--fill">
-                                <use href="./images/sprite.svg#icon-linkedin"></use>
+                                <use href="./images/icon/sprite.svg#icon-linkedin"></use>
                             </svg>
                         </a>
                     </li>
@@ -241,7 +356,7 @@
                     <input class="form__input-alt" type="email" name="user-email" placeholder="E-mail">
                     <button class="button form__button form__button--footer" type="submit">Подписаться
                         <svg class="button__icon" width="24" height="24">
-                            <use href="./images/sprite.svg#icon-send"></use>
+                            <use href="./images/icon/sprite.svg#icon-send"></use>
                         </svg>
                     </button>
                 </form>
@@ -249,5 +364,6 @@
         </ul>
     </div>
 </footer>
+<script src="./js/menu.js"></script>
 </body>
 </html>

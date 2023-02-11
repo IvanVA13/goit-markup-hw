@@ -1,5 +1,8 @@
 .footer {
   background-color: $bg-color;
+  @include for-size(mob-tab) {
+    text-align: center;
+  }
 
   &__container {
     padding-top: 60px;
@@ -10,26 +13,50 @@
 
   &__list {
     @extend %list;
-    display: inline-flex;
-    align-items: flex-start;
+
+    @include for-size(tablet-only) {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    @include for-size(desktop) {
+      display: inline-flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__item:last-child {
+    flex-grow: 1;
   }
 
   &__item:not(:last-child) {
-    margin-right: 70px;
+    @include for-size(mob-tab) {
+      margin-bottom: 60px;
+    }
+
+    @include for-size(desktop) {
+      margin-right: 70px;
+    }
   }
 
   &__title {
     @extend %title;
     margin-bottom: 20px;
     padding-top: 12px;
+    @include for-size(tablet-only) {
+      padding-top: 0;
+    }
 
     color: inherit;
-    font-size: $f-size-2;
-    line-height: $l-hgt-1;
+    @include fonts(700, 14px);
     text-transform: uppercase;
   }
 
   &__form {
-    @include centerFlexbox();
+    @include for-size(desktop) {
+      @include centerFlexbox();
+    }
   }
 }

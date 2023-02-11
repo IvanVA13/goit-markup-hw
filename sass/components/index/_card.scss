@@ -10,16 +10,13 @@
   //Оформление заголовков секции команда
   &__title {
     @extend %title;
-    font-weight: $f-weight-nb;
-    font-size: $f-size-3;
-    line-height: $l-hgt-4;
+    @include fonts(500, $lh: 1.19);
   }
   //Оформление рода деятельности членов команды
   &__profession {
     margin: 0px;
     margin-bottom: 16px;
 
-    font-size: $f-size-3;
-    line-height: $l-hgt-4;
+    @include fonts($lh: 1.19);
   }
 }

@@ -1,9 +1,10 @@
 .logo {
   color: $title-text-color;
   font-family: $f-family-Ral;
-  font-weight: $f-weight-b;
-  font-size: $f-size-6;
-  line-height: $l-hgt-4;
+  @include fonts(700, 26px, 1.19);
+  @include for-size(mob-tab) {
+    @include fonts(700, 24px, 1.17);
+  }
 
   text-decoration: none;
   //Оформление лого в футере

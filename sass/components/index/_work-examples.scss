@@ -23,11 +23,8 @@
     width: 100%;
     height: 70px;
 
-    font-weight: $f-weight-b;
-    font-size: inherit;
-    line-height: $l-hgt-1;
+    @include fonts(700, inherit);
     text-align: center;
-    letter-spacing: $let-scg-3;
     text-transform: uppercase;
     color: $second-accent-color;
     background-color: $work-title-bg-color;

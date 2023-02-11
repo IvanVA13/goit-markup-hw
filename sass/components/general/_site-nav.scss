@@ -2,24 +2,37 @@
   &__list {
     @include centerFlexbox();
     @extend %list;
+    @include for-size(mobile-only) {
+      display: inline-block;
+      padding-bottom: 60px;
+    }
   }
 
+  &__item:not(:first-child) {
+    @include for-size(mobile-only) {
+      margin-top: 40px;
+    }
+  }
   &__item:not(:last-child) {
-    margin-right: 50px;
+    @include for-size(tablet) {
+      margin-right: 50px;
+    }
   }
 
   &__link {
     @extend %link, %d-block;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    @include for-size(mobile-only) {
+      @include fonts(500, 18px, 1.17, 0.02em);
+    }
+    @include for-size(tablet) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
 
     color: $title-text-color;
-    font-weight: $f-weight-nb;
-    line-height: $l-hgt-1;
-    letter-spacing: $let-scg-2;
+    @include fonts(500, inherit, $ls: 0.02em);
     transition: color $animation;
   }
-
   &__link:hover,
   &__link:focus {
     color: $accent-color;
@@ -27,6 +40,10 @@
 
   &__link--current {
     position: relative;
+    @include for-size(mobile-only) {
+      display: inline-block;
+      padding-bottom: 8px;
+    }
 
     color: $accent-color;
   }

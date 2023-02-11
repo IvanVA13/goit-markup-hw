@@ -1,8 +1,5 @@
 body {
   color: $main-text-color;
   font-family: $f-family-Rob, $f-family-Ral, sans-serif;
-  font-weight: $f-weight-n;
-  font-size: $f-size-2;
-  line-height: $l-hgt-9;
-  letter-spacing: $let-scg-3;
+  @include fonts($fc: 14px, $lh: 1.71);
 }

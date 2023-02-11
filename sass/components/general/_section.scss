@@ -1,8 +1,19 @@
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include for-size(desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
   &--pad-top {
     padding-top: 0;
+  }
+
+  &--hidden {
+    @include for-size(mob-tab) {
+      display: none;
+    }
   }
 
   &__list {
@@ -18,9 +29,11 @@
     margin-bottom: 50px;
 
     color: $title-text-color;
-    font-weight: $f-weight-b;
-    font-size: $f-size-7;
-    line-height: $l-hgt-3;
+    @include fonts(700, 28px, 1.18);
+    @include for-size(desktop) {
+      @include fonts(700, 36px, 1.17);
+    }
+
     text-align: center;
   }
 
