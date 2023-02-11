@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио</title>
+    <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -23,18 +23,19 @@
             </nav>
             <ul class="list contacts-nav">
                 <li class="nav-item contacts-item">
-                    <svg class="icon">
-                        <use href="./images/sprite.svg#icon-envelope"></use>
-                    </svg>
                     <a class="link contacts-header" href="mailto:info@devstudio.com">
+                        <svg class="icon" width="16" height="12">
+                            <use href="./images/sprite.svg#icon-envelope"></use>
+                        </svg>
                         info@devstudio.com
                     </a>
                 </li>
                 <li class="nav-item contacts-item">
-                    <svg class="icon smartphone-icon">
-                        <use href="./images/sprite.svg#icon-smartphone"></use>
-                    </svg>
-                    <a class="link contacts-header" href="tel:+380961111111">+38 096 111 11 11
+                    <a class="link contacts-header" href="tel:+380961111111">
+                        <svg class="icon" width="10" height="16">
+                            <use href="./images/sprite.svg#icon-smartphone"></use>
+                        </svg>
+                        +38 096 111 11 11
                     </a>
                 </li>
             </ul>
@@ -43,93 +44,109 @@
     <main>
         <h1 class="visually-hidden">Портфолио</h1>
         <div class="portfolio-main-container">
-            <div class="container button-list">
-                <ul class="list sort-list">
-                    <li class="sort-list-item">
-                        <button class="button secondary" type="button">Все</button>
-                    </li>
-                    <li class="sort-list-item">
-                        <button class="button secondary" type="button">Веб-сайты</button>
-                    </li>
-                    <li class="sort-list-item">
-                        <button class="button secondary" type="button">Приложения</button>
-                    </li>
-                    <li class="sort-list-item">
-                        <button class="button secondary" type="button">Дизайн</button>
-                    </li>
-                    <li class="sort-list-item">
-                        <button class="button secondary" type="button">Маркетинг</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="container portfolio-container">
-                <ul class="list portfolio-list">
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                            <img class="img portfolio-img" src="./images/tekhnokryak.jpg" alt="Технокряк" width="370">
-                            <h2 class="title portfolio-title">Технокряк</h2>
-                            <p class="portfolio">Веб-сайт</p>
+        <div class="container button-list">
+            <ul class="list sort-list">
+                <li class="sort-list-item"><button class="button secondary" type="button">Все</button></li>
+                <li class="sort-list-item"><button class="button secondary" type="button">Веб-сайты</button></li>
+                <li class="sort-list-item"><button class="button secondary" type="button">Приложения</button></li>
+                <li class="sort-list-item"><button class="button secondary" type="button">Дизайн</button></li>
+                <li class="sort-list-item"><button class="button secondary" type="button">Маркетинг</button></li>
+            </ul>
+        </div>
+        <div class="container portfolio-container">
+            <ul class="list portfolio-list">
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/tekhnokryak.jpg" alt="Технокряк" width="370" height="294">
+                            <p class="portfolio-description">Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.</p>
                         </div>
-                    </li>
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                        
-                        <img class="img portfolio-img" src="./images/poster-new-orlean-vs-golden-star.jpg" alt="Постер New Orlean vs Golden Star" width="370">
+                        <h2 class="title portfolio-title">Технокряк</h2>
+                        <p class="portfolio">Веб-сайт</p>
+                    </a>
+                </li>
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/poster-new-orlean-vs-golden-star.jpg" alt="Постер New Orlean vs Golden Star" width="370" height="294">
+                            <p class="portfolio-description">New Orlean vs Golden Star</p>
+                        </div>
                         <h2 class="title portfolio-title">Постер New Orlean vs Golden Star</h2>
                         <p class="portfolio">Дизайн</p>
-                    </div>
-                    </li>
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                        <img class="img portfolio-img" src="./images/restoran-seafood.jpg" alt="Ресторан Seafood" width="370">
+                    </a>
+                </li>
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/restoran-seafood.jpg" alt="Ресторан Seafood" width="370" height="294">
+                            <p class="portfolio-description">Ресторан Seafood</p>
+                        </div>
                         <h2 class="title portfolio-title">Ресторан Seafood</h2>
                         <p class="portfolio">Приложение</p>
-                    </div>
-                    </li>
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                        <img class="img portfolio-img" src="./images/project-prime.jpg" alt="Проект Prime" width="370">
+                    </a>
+                </li>
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/project-prime.jpg" alt="Проект Prime" width="370" height="294">
+                            <p class="portfolio-description">Проект Prime</p>
+                        </div>
                         <h2 class="title portfolio-title">Проект Prime</h2>
                         <p class="portfolio">Маркетинг</p>
-                    </div>
-                    </li>
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                        <img class="img portfolio-img" src="./images/project-boxes.jpg" alt="Проект Boxes" width="370">
+                    </a>
+                </li>
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/project-boxes.jpg" alt="Проект Boxes" width="370" height="294">
+                            <p class="portfolio-description">Проект Boxes</p>
+                        </div>
                         <h2 class="title portfolio-title">Проект Boxes</h2>
                         <p class="portfolio">Приложение</p>
-                    </div>
-                    </li>
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                        <img class="img portfolio-img" src="./images/inspiration-has-no-borders.jpg" alt="Inspiration has no Borders" width="370">
+                    </a>
+                </li>
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/inspiration-has-no-borders.jpg" alt="Inspiration has no Borders" width="370" height="294">
+                            <p class="portfolio-description">Inspiration has no Borders</p>
+                        </div>
                         <h2 class="title portfolio-title">Inspiration has no Borders</h2>
                         <p class="portfolio">Веб-сайт</p>
-                    </div>
-                    </li>
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                        <img class="img portfolio-img" src="./images/izdanie-limited-edition.jpg" alt="Издание Limited Edition" width="370">
+                    </a>
+                </li>
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/izdanie-limited-edition.jpg" alt="Издание Limited Edition" width="370" height="294">
+                            <p class="portfolio-description">Издание Limited Edition</p>
+                        </div>
                         <h2 class="title portfolio-title">Издание Limited Edition</h2>
                         <p class="portfolio">Дизайн</p>
-                    </div>
-                    </li>
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                        <img class="img portfolio-img" src="./images/project-lab.jpg" alt="Проект LAB" width="370">
+                    </a>
+                </li>
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/project-lab.jpg" alt="Проект LAB" width="370" height="294">
+                            <p class="portfolio-description">Проект LAB</p>
+                        </div>
                         <h2 class="title portfolio-title">Проект LAB</h2>
                         <p class="portfolio">Маркетинг</p>
-                    </div>
-                    </li>
-                    <li class="portfolio-list-item">
-                        <div class="portfolio-card">
-                        <img class="img portfolio-img" src="./images/growing-business.jpg" alt="Growing Business" width="370">
+                    </a>
+                </li>
+                 <li class="portfolio-list-item">
+                    <a href="" class="link portfolio-card">
+                        <div class="portfolio-card-container">
+                            <img class="img portfolio-img" src="./images/growing-business.jpg" alt="Growing Business" width="370" height="294">
+                            <p class="portfolio-description">Growing Business</p>
+                        </div>
                         <h2 class="title portfolio-title">Growing Business</h2>
                         <p class="portfolio">Приложение</p>
-                    </div>
-                    </li>
-                </ul>
-            </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
         </div>
     </main>
 <!-- Подвал -->
